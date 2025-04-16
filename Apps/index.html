@@ -1,0 +1,141 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mukkara Manasa| Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Mukkara Manasa</div>
+    <!-- <nav>
+      <a href="#about">About</a>
+      <a href="#work">Work Experience</a> -->
+      <!-- <a href="#skills">Skills</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact Me</a>
+    </nav> -->
+  </header>
+
+  <section class="hero">
+    <h1>Hi, I'm Mukkara Manasa</h1>
+    <p> Data Science | DevOps Enthusiast</p>
+  </section>
+
+  <section id="about">
+    <div class="about-container">
+      <img src="E:\Documents\sem 6\pes\WhatsApp Image 2.jpg" alt="Chandni Kumari" />
+      <div>
+        <h2>About Me</h2>
+        <p>I am a Computer Science student with a strong interest in programming, data science, and DevOps. I have worked on projects using Python, C++, Java, and R, and have created dashboards using Excel and Tableau. I'm also skilled in SQL and have a good understanding of data structures and algorithms.
+
+          Currently, I’m exploring DevOps tools like Docker and Kubernetes, and learning more about Generative AI. I enjoy learning new technologies and using them to build useful solutions.</p>
+        <!-- <p>With a strong foundation in programming and analytics, this Computer Science student is passionate about solving real-world problems and building innovative solutions. Practical experience in Python, C++, Java, R, and SQL has helped them develop impactful projects and visual dashboards. Their interests include DevOps tools like Docker and Kubernetes, as well as exploring Generative AI, all of which contribute to a well-rounded technical profile.</p> -->
+      </div>
+    </div>
+  </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <ul>
+        <li><strong>Programming Languages:</strong> Python, C++, Java, R</li>
+        <li><strong>Data Science Tools:</strong> Tableau, Excel, SQL</li>
+        <li><strong>DevOps Tools:</strong> Docker, Kubernetes</li>
+        <li><strong>Machine Learning:</strong> KNN, Decision Trees, Regression</li>
+        <li><strong>Cloud Computing:</strong> AWS, Azure</li>
+        <li><strong>Other Skills:</strong> Data Structures & Algorithms, Generative AI</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2> Projects</h2>
+    <div class="projects">
+      <div class="project">
+        
+<ul>
+  <li>
+    <strong>Spark of Sales Dashboard</strong>  
+    <p>Created using Tableau to analyze customer purchase behavior in the electronics market. Helped identify top products, payment methods, and sales patterns. Used Kaggle dataset.</p>
+    <a href="https://github.com/Manasa1711/Spark-of-Sales-Electronics-Performance-Insights" target="_blank">View Project</a>
+  </li>
+
+  <li>
+    <strong>Diamond Price Prediction Dashboard</strong>  
+    <p>Built using R and Shiny with ML models like KNN, Decision Tree, and Linear Regression. The dashboard predicts diamond prices based on carat, cut, and clarity with accuracy comparison.</p>
+    <a href="https://github.com/Manasa1711/Diamond-Price-Prediction-Dashboard" target="_blank">View Project</a>
+  </li>
+
+    </div>
+  </section>
+
+  <section id="certificates">
+    <h2>Certificates</h2>
+    <div class="certificates-grid">
+      <div class="certificate">
+        <!-- <img src="images/certificate1.png" alt="Generative AI" onclick="enlargeImage(this)"> -->
+        <h3>GeeksforGeeks</h3>
+        <p> Devops Engineering - Planning to Production| August 2024 </p>
+        <!-- <a href="CERTIFICATE_LINK" download>Download</a> -->
+      </div>
+      <div class="certificate">
+        <!-- <img src="images/certificate2.png" alt="Cloud Computing" onclick="enlargeImage(this)"> -->
+        <h3>Cloud Computing</h3>
+        <p>NPTEL | Mar 2024 – May 2024</p>
+        <!-- <a href="CERTIFICATE_LINK" download>Download</a> -->
+      </div>
+      <div class="certificate">
+        <!-- <img src="images/certificate3.png" alt="OOPs" onclick="enlargeImage(this)"> -->
+        <h3>Skill Nation</h3>
+        <p>Basic to Advanced SQL Masterclass-Js| Jun 2024 </p>
+        <!-- <a href="CERTIFICATE_LINK" download>Download</a> -->
+      </div>
+      <div class="certificate">
+        <!-- <img src="images/certificate3.png" alt="OOPs" onclick="enlargeImage(this)"> -->
+        <h3>Skill Nation</h3>
+        <p>Basic to Advanced Microsoft Excel| Jun 2024 </p>
+        <!-- <a href="CERTIFICATE_LINK" download>Download</a> -->
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    
+    <a href="E:\Documents\final resume\Mukkara Manasa Resume (1).pdf" download>Download Resume</a>
+  </section>
+
+  <!-- <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formsubmit.co/manasamukkara1711@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section> -->
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formsubmit.co/manasamukkara1711@gmail.com" method="POST">
+      <!-- Add hidden field to prevent form resubmission -->
+      <input type="hidden" name="_next" value="https://your-website.com/thank-you.html"> <!-- Redirect to a thank-you page after submission -->
+      <input type="hidden" name="_subject" value="New contact form submission"> <!-- Subject of the email -->
+
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+</section>
+
+  <div class="enlarged-image-container" onclick="closeImage()">
+    <img id="enlargedImage" src="" alt="Enlarged Certificate"/>
+  </div>
+
+</body>
+</html>
