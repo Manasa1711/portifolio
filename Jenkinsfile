@@ -1,55 +1,44 @@
 pipeline {
     agent {
         docker {
-            image 'my-ubuntu-apache' // Or your DockerHub image
-            args '-u root'
+            image 'ubuntu:20.04'
+            args '-u root' // run as root to install packages
         }
     }
 
     environment {
-        WEBSITE_DIR = '/var/www/html'
-        PORT = '82'
+        BUILD_DIR = "/var/www/html"
     }
 
     stages {
-        stage('Prepare') {
+        stage('Install Apache') {
             steps {
                 sh '''
-                    apt-get update
-                    apt-get install -y apache2 curl
-                    rm -rf ${WEBSITE_DIR}/*
+                apt-get update
+                apt-get install -y apache2
+                mkdir -p $BUILD_DIR
                 '''
             }
         }
 
         stage('Build Code') {
             steps {
-                sh '''
-                    echo "Copying website files to ${WEBSITE_DIR}..."
-                    cp -r * ${WEBSITE_DIR}/
-                '''
+                // Replace this with your actual build command
+                sh 'echo "<h1>Website Deployed from ${BRANCH_NAME}</h1>" > $BUILD_DIR/index.html'
             }
         }
 
-        stage('Deploy if Master') {
+        stage('Publish to Web Server') {
             when {
                 branch 'master'
             }
             steps {
                 sh '''
-                    echo "Deploying to port ${PORT}..."
-                    sed -i "s/80/${PORT}/g" /etc/apache2/ports.conf
-                    sed -i "s/80/${PORT}/g" /etc/apache2/sites-enabled/000-default.conf
-                    apachectl start
-                    echo "Website is live at http://localhost:${PORT}"
+                cp -r $BUILD_DIR/* /var/www/html/
+                apachectl start
+                echo "Site is now live on port 82"
                 '''
             }
-        }
-    }
-
-    post {
-        always {
-            echo "Pipeline complete for ${env.BRANCH_NAME}"
         }
     }
 }
